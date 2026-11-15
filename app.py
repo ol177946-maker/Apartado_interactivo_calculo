@@ -29,7 +29,7 @@ def es(x, d=0, signo=""):
 # ---------------------------------------------------------------------------
 # DATOS DEL GRUPO (se cambian aquí o en la barra lateral)
 # ---------------------------------------------------------------------------
-K_GRUPO_POR_DEFECTO = 4          # <- número de grupo que asigna el docente
+K_GRUPO_POR_DEFECTO = 10          # <- número de grupo que asigna el docente
 DATOS_BASE = [120, 150, 190, 240, 300, 360]   # los seis primeros datos de la Pregunta 5
 TMAX = 30                        # el análisis es del primer mes
 T_CAMPANA = 5                    # la campaña dura 5 días
@@ -126,7 +126,7 @@ for clave, valor in dict(tope=200_000, a=9.0, b=0.6, v0=900.0, r=0.8, capacidad=
 with st.sidebar:
     st.header("Datos que puede cambiar")
     k = st.number_input("Número de grupo (k)", 1, 99, K_GRUPO_POR_DEFECTO, 1,
-                        help="El docente lo asigna. Solo cambia el dato 430+10k de la Pregunta 5.")
+                        help="Número que escoge el grupo (el docente permitió cualquiera). Solo cambia el dato 430+10k de la Pregunta 5.")
     st.selectbox("Escenario «¿qué pasa si…?»", list(ESCENARIOS), key="escenario", on_change=aplicar_escenario)
     st.markdown("**Modelo corregido V\\***")
     tope = st.slider("Tope de visitas diarias (visitas)", 100_000, 400_000, step=10_000, key="tope", format="%d")
